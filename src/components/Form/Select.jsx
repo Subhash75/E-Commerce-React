@@ -24,7 +24,10 @@ const Select = ({ name, label, options, control, ...rest }) => {
                             },
                         }}
                         sx={{
-                            '& div#mui-component-select-state': {
+                            "& div#mui-component-select-category": {
+                                textTransform: "capitalize",
+                            },
+                            "& div#mui-component-select-state": {
                                 fontFamily: "Montserrat-SemiBold",
                             },
                         }}
@@ -37,7 +40,8 @@ const Select = ({ name, label, options, control, ...rest }) => {
                                 value={option.value}
                                 style={{
                                     fontFamily: "Montserrat-SemiBold",
-                                    color: "rgb(30, 42, 168)"
+                                    color: "rgb(30, 42, 168)",
+                                    textTransform: "capitalize",
                                 }}
                             >
                                 {option.label}

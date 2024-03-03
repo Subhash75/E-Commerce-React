@@ -89,7 +89,11 @@ function BasicDetails() {
                     <Button
                         type="submit"
                         variant="contained"
-                        style={{ background: "rgb(30, 42, 168)", marginTop: "25px" }}
+                        style={{
+                            background: "rgb(30, 42, 168)",
+                            marginTop: "25px",
+                            "&:hover ": { background: "rgb(30, 42, 168)" },
+                        }}
                     >
                         {isBasicDetailsLoading ? (
                             <>
