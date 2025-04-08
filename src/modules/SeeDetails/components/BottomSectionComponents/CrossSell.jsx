@@ -1,3 +1,5 @@
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import ProductCardSkeleton from "components/Loaders/ProductCardSkeleton";
 import ProductCard from "components/ProductCard";
 import {
@@ -5,8 +7,6 @@ import {
     JumpSlideStyled,
 } from "modules/SeeDetails/SeeDetails.styled";
 import { useEffect, useRef, useState } from "react";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 function CrossSell({ allProducts, isAllProductsFetching, control }) {
     const groupedData = [];
@@ -19,18 +19,18 @@ function CrossSell({ allProducts, isAllProductsFetching, control }) {
     }
 
     const [activeIndex, setActiveIndex] = useState(0);
-    let ref = useRef();
+    let timeoutRef = useRef();
 
     useEffect(() => {
-        if (ref.current) {
-            clearTimeout(ref.current);
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
         }
 
-        ref.current = setTimeout(() => {
+        timeoutRef.current = setTimeout(() => {
             handleNext();
         }, 3000);
 
-        return () => clearTimeout(ref.current);
+        return () => clearTimeout(timeoutRef.current);
     });
 
     const handlePrevious = () => {
@@ -53,7 +53,7 @@ function CrossSell({ allProducts, isAllProductsFetching, control }) {
     };
 
     return (
-        <CrossSellContainerStyled activeIndex={activeIndex}>
+        <CrossSellContainerStyled activeIndex={activeIndex} >
             {isAllProductsFetching || allProducts?.length ? (
                 <h2>You might also be interested in</h2>
             ) : (
