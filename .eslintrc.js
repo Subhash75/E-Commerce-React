@@ -22,6 +22,7 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "react/react-in-jsx-scope": "off", // not needed with React 17+
+    "react/prop-types": "off",
   },
   settings: {
     react: {
